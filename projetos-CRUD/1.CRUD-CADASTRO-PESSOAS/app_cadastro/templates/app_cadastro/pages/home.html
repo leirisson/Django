@@ -1,0 +1,17 @@
+{% extends "app_cadastro/pages/base.html" %}
+{% block conteudo %}
+
+<div>
+    <ul>
+        {% for pessoa in pessoas %}
+            <li>Nome: {{pessoa.nome}} - Telefone: {{pessoa.telefone}}  <a href="{% url 'update' pessoa.id %}" class="btn-editar">EDITAR</a> <a href="{% url 'deletar' pessoa.id %}" class="btn-deletar">DELETAR</a> </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="form">
+    {% include "app_cadastro/pages/formCadastro.html" %}
+</div>
+
+{% endblock  %}
+

@@ -1,0 +1,27 @@
+{% extends "app_cadastro/pages/base.html" %}
+
+{% block conteudo %}
+<h1>Atualizando dados do cliente</h1>
+<form action="{% url 'editado' pessoa.id %}" method="POST">
+
+    {% csrf_token %}
+    
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" placeholder="digite seu nome" value="{{pessoa.nome}}">
+
+    <label for="nome">cpf</label>
+    <input type="text" name="cpf" value="{{pessoa.cpf}}" placeholder="digite seu cpf">
+
+    <label for="nome">e-mail</label>
+    <input type="email" name="email"  value="{{pessoa.email}}" placeholder="digite seu e-mail...">
+
+    <label for="nome">telefone</label>
+    <input type="text"  name="telefone" value="{{pessoa.telefone}}" placeholder="digite seu teleafone">
+
+    <label for="nome">Data de nascimento</label>
+    <input type="date" name="data_nascimento" value="{{pessoa.data_nascimento}}">
+
+    <button type="submit">Salvar</button>
+</form>
+
+{% endblock  %}
